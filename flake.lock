@@ -1,0 +1,109 @@
+{
+  "nodes": {
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791942653,
+        "narHash": "sha256-pYyokDN1hL2EmlgjlXhUgqplnSXpgMJfsm9oPqVQ4fg=",
+        "owner": "talonlikeaclaw",
+        "repo": "dotfiles",
+        "rev": "5d22f711f65210472fa48a6ecc528f98b8f67665",
+        "type": "github"
+      },
+      "original": {
+        "owner": "talonlikeaclaw",
+        "repo": "dotfiles",
+        "type": "github"
+      }
+    },
+    "herdr": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1791993401,
+        "narHash": "sha256-N7e7oCKxeCoxek6UT8Lweq16rSsQQi34QMb7C2iNpm8=",
+        "owner": "herdrdev",
+        "repo": "herdr",
+        "rev": "2ecf19a92fc3a7fff75b6ce3655ef04f4625ec01",
+        "type": "github"
+      },
+      "original": {
+        "owner": "herdrdev",
+        "ref": "v0.9.5",
+        "repo": "herdr",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794278858,
+        "narHash": "sha256-rkrJwLgLSHBnXfgoSKIDa+2LLGdTqynsV3GAxOTGhUU=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "82ce401aa350502897c3f2e85f384d61cd3b0b6d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1794386569,
+        "narHash": "sha256-x9sADJvoVG0L6RejZB+/BB4YiGZFBZrfTlhF4uBq1tQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d4f25a3e562008648d45bcf2d70bcc7422cad84e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "dotfiles": "dotfiles",
+        "herdr": "herdr",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "herdr",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783577481,
+        "narHash": "sha256-EWMxOWrJ031f8f/lrcEmhTRs4npw1/5N3Hcjin846c8=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "4cdea398dc491b082dccdce0fad1ed0b75fa3394",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
