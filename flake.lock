@@ -79,7 +79,15 @@
         "dotfiles": "dotfiles",
         "herdr": "herdr",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "skill-anthropics": "skill-anthropics",
+        "skill-caveman": "skill-caveman",
+        "skill-impeccable": "skill-impeccable",
+        "skill-mattpocock": "skill-mattpocock",
+        "skill-ponytail": "skill-ponytail",
+        "skill-supabase": "skill-supabase",
+        "skill-superpowers": "skill-superpowers",
+        "skill-vercel": "skill-vercel"
       }
     },
     "rust-overlay": {
@@ -100,6 +108,134 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "skill-anthropics": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794004348,
+        "narHash": "sha256-dRCZrNarCCJFuvATgfW6qmwwVS5HGFXNVGOhbVZd7LA=",
+        "owner": "anthropics",
+        "repo": "skills",
+        "rev": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anthropics",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
+    "skill-caveman": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794590119,
+        "narHash": "sha256-HcNc+iyIL/K4JOBBsJAS2eh0vcpW3CwL5CQMqY0LMh0=",
+        "owner": "JuliusBrussee",
+        "repo": "caveman",
+        "rev": "b4ee71d557d96e3cbc14f88fa6e953a1362865f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuliusBrussee",
+        "repo": "caveman",
+        "type": "github"
+      }
+    },
+    "skill-impeccable": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794550070,
+        "narHash": "sha256-b78kdUfsu28Vos1SfUyFo33UQhdVOOZE8NZ8JJo4u3o=",
+        "owner": "pbakaus",
+        "repo": "impeccable",
+        "rev": "c4cd1924c389f68d37c687d9c2bbf13f12547c41",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pbakaus",
+        "repo": "impeccable",
+        "type": "github"
+      }
+    },
+    "skill-mattpocock": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794472958,
+        "narHash": "sha256-AYSRCvBL8TDDdW3rgKu2T7gl4YYDoDId0jYbabEFyfs=",
+        "owner": "mattpocock",
+        "repo": "skills",
+        "rev": "5863806dd4e15c63174bee4e7515a4256792ecfa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mattpocock",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
+    "skill-ponytail": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793275171,
+        "narHash": "sha256-PhPtZbeX2wBp19GtWRy+fV93+fFYZe5S487eXPDl/us=",
+        "owner": "DietrichGebert",
+        "repo": "ponytail",
+        "rev": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DietrichGebert",
+        "repo": "ponytail",
+        "type": "github"
+      }
+    },
+    "skill-supabase": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790944488,
+        "narHash": "sha256-MKa/ZwI2yfwiqI76uNg7QsX9F6MF2nctOEme6UtwtQM=",
+        "owner": "supabase",
+        "repo": "agent-skills",
+        "rev": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "supabase",
+        "repo": "agent-skills",
+        "type": "github"
+      }
+    },
+    "skill-superpowers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793744227,
+        "narHash": "sha256-rP5YsyGuPd9YSW/Fj3aukrq1bLuV+nwwQMK4JaZQgkI=",
+        "owner": "obra",
+        "repo": "superpowers",
+        "rev": "22f0b463e7a5e579904dd6211a520321035526f7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "obra",
+        "repo": "superpowers",
+        "type": "github"
+      }
+    },
+    "skill-vercel": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793137202,
+        "narHash": "sha256-uujS8sGulF6STR4adqYCHBxPY9pHddXfFfX6UqAG24c=",
+        "owner": "vercel-labs",
+        "repo": "agent-skills",
+        "rev": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vercel-labs",
+        "repo": "agent-skills",
         "type": "github"
       }
     }
