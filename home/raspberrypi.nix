@@ -34,7 +34,6 @@
     htop
     jq
     neovim
-    opencode
     ripgrep
     sesh
     television

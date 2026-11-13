@@ -27,3 +27,4 @@ Standalone home-manager flake for the `raspberrypi` host (Debian 12 aarch64). No
 - `programs.*` home-manager modules are used where they exist (`git`, `bat`, `zsh`, `starship`, `fzf`, `eza`, `zoxide`, `direnv`, `ssh`, `lazygit`)
 - No tmux: `herdr` is the terminal multiplexer here, with the sesh plugin (`sesh` package installed alongside)
 - `neovim` is installed plain — no `programs.neovim`, no LSP/formatter set, no config links
+- No `opencode`: omp is the agent here. omp reads skills from `~/.omp/agent/skill-sources/*` and `~/.omp/agent/manual-skills` (declared in its own `config.yml`), independent of opencode

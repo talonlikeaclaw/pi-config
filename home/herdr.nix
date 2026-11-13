@@ -14,11 +14,6 @@ in
 
   xdg.configFile."herdr/config.toml".source = "${dotfiles}/herdr/.config/herdr/config.toml";
 
-  # Keep the bundled OpenCode integration in lockstep with the pinned binary.
-  home.activation.installHerdrOpenCodeIntegration = lib.hm.dag.entryAfter [ "writeBoundary" "installOpencodeCliConfig" ] ''
-    run ${herdrPackage}/bin/herdr integration install opencode
-  '';
-
   home.activation.installHerdrPlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     export PATH="${
       lib.makeBinPath [
