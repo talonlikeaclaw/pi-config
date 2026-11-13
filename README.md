@@ -13,6 +13,16 @@ cd ~/Code/pi-config && nix run home-manager -- switch --flake .#talon@raspberryp
 exec zsh
 ```
 
+### Debian-side services (manual, outside Nix)
+
+`tailscale` and `docker` are installed as **clients only** — home-manager cannot enable system
+daemons. The Debian `tailscaled` / `dockerd` keep running as they are:
+
+```sh
+sudo tailscale up
+sudo systemctl enable --now docker
+```
+
 ## Commands
 
 ```sh
