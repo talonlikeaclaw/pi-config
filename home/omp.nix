@@ -8,8 +8,8 @@ let
     inherit version;
 
     src = pkgs.fetchurl {
-      url = "https://github.com/can1357/oh-my-pi/releases/download/v${version}/omp-linux-x64";
-      hash = "sha256-KnXhZVBnZ4OzvIvg4GUTR43ViB78ZHlUZCqzDbj5vgY=";
+      url = "https://github.com/can1357/oh-my-pi/releases/download/v${version}/omp-linux-arm64";
+      hash = "sha256-O9dpn+fqY6jrFPJykNnTxqVuVTiL72xWDLE52AkzBSg=";
     };
 
     dontUnpack = true;
