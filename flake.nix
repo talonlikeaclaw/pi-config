@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    herdr = {
-      url = "github:herdrdev/herdr/v0.9.5";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     dotfiles = {
       url = "github:talonlikeaclaw/dotfiles";
       flake = false;
@@ -61,7 +56,6 @@
       self,
       nixpkgs,
       home-manager,
-      herdr,
       dotfiles,
       skill-caveman,
       skill-ponytail,
@@ -83,7 +77,6 @@
         modules = [ ./home/raspberrypi.nix ];
         extraSpecialArgs = {
           inherit
-            herdr
             dotfiles
             skill-caveman
             skill-ponytail

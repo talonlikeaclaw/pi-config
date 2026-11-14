@@ -4,6 +4,7 @@
   imports = [
     ./fastfetch.nix
     ./herdr.nix
+    ./lazygit.nix
     ./omp.nix
     ./server.nix
     ./sdr.nix
