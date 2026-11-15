@@ -91,13 +91,4 @@
     enableZshIntegration = true;
     nix-direnv.enable = true;
   };
-
-  # The copied zsh.nix ends with `eval "$(tv init zsh)"`, which runs during the
-  # first activation before the generation is linked. Guard it so a failed
-  # first switch cannot break the shell.
-  programs.zsh.initContent = lib.mkBefore ''
-    if command -v tv >/dev/null 2>&1; then
-      eval "$(tv init zsh)"
-    fi
-  '';
 }

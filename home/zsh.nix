@@ -43,7 +43,9 @@
 
     initContent = ''
       setopt HIST_VERIFY
-      eval "$(tv init zsh)"
+      if command -v tv >/dev/null 2>&1; then
+        eval "$(tv init zsh)"
+      fi
     '';
   };
 
