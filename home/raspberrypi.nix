@@ -26,6 +26,7 @@
 
   home.packages = with pkgs; [
     bat
+    cargo
     delta
     eza
     fastfetch

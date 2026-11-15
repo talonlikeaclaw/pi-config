@@ -13,7 +13,6 @@ let
 in
 {
   home.packages = with pkgs; [
-    hackrf
     multimon-ng
     rtl-sdr
     rtl433
