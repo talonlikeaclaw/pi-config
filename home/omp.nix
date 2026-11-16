@@ -4,15 +4,18 @@ let
   version = "18.18.1";
 
   # Each skill repository is a separate flake input, linked at the path that
-  # omp's config.yml expects under ~/.omp/agent/skill-sources/<name>.
+  # omp's config.yml expects under ~/.omp/agent/skill-sources/<name>. The link
+  # points at the repository root so the customDirectories entries in
+  # dotfiles/omp/.omp/agent/config.yml (which append /skills, /skills/engineering
+  # or /.agents/skills) resolve.
   skillSources = {
-    caveman = args.skill-caveman + "/skills";
-    ponytail = args.skill-ponytail + "/skills";
-    anthropics-skills = args.skill-anthropics + "/skills";
-    vercel-agent-skills = args.skill-vercel + "/skills";
-    mattpocock-skills = args.skill-mattpocock + "/skills";
-    supabase-agent-skills = args.skill-supabase + "/skills";
-    impeccable = args.skill-impeccable + "/.agents/skills";
+    caveman = args.skill-caveman;
+    ponytail = args.skill-ponytail;
+    anthropics-skills = args.skill-anthropics;
+    vercel-agent-skills = args.skill-vercel;
+    mattpocock-skills = args.skill-mattpocock;
+    supabase-agent-skills = args.skill-supabase;
+    impeccable = args.skill-impeccable;
   };
 
   omp = pkgs.stdenvNoCC.mkDerivation {
@@ -52,7 +55,11 @@ in
   };
 
   # OMP writes preferences atomically; a Home Manager source link points into
-  # /nix/store and therefore cannot serve as its live configuration file.
+  # /nix/store and therefore cannot serve as its live configuration file. The
+  # copy below only seeds a fresh install, since omp rewrites the file afterwards
+  # (setupVersion, model roles, theme). The skills block is re-applied on every
+  # switch instead: omp reads customDirectories only from the live file, so an
+  # omp-written config without it loads zero skills on this host.
   home.activation.installOmpConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     config="$HOME/.omp/agent/config.yml"
 
@@ -65,5 +72,13 @@ in
       cp "${dotfiles}/omp/.omp/agent/config.yml" "$config"
       chmod u+w "$config"
     fi
+
+    dotfilesConfig=$(mktemp -d)
+    cp "${dotfiles}/omp/.omp/agent/config.yml" "$dotfilesConfig/config.yml"
+    for key in $(PI_CODING_AGENT_DIR="$dotfilesConfig" ${omp}/bin/omp config list --json --scope=global | ${pkgs.jq}/bin/jq -r 'keys[] | select(startswith("skills."))'); do
+      value=$(PI_CODING_AGENT_DIR="$dotfilesConfig" ${omp}/bin/omp config get "$key" --json | ${pkgs.jq}/bin/jq -c '.value')
+      ${omp}/bin/omp config set "$key" "$value"
+    done
+    rm -rf "$dotfilesConfig"
   '';
 }
